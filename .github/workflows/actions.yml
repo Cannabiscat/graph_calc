@@ -2,8 +2,8 @@ name: init
 on: push
 jobs:
   build:
-  name: Build project
-  runs-on: self-hosted
-  steps:
-    - name: Checkout main branch
-      uses: actions/checkout@main
+    name: Build project
+    runs-on: self-hosted
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@main
