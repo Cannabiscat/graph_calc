@@ -4,10 +4,13 @@ jobs:
   build:
     name: Build project
     runs-on: self-hosted
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
       - name: Checkout main branch
         uses: actions/checkout@main
       - name: Install packages
         with:
-          node-version: 12.x
+          node-version: 12
       - run: npm install
