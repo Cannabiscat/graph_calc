@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./LineChart.css";
 
-type point = {
+export type point = {
   x: number;
   y: number;
 };
@@ -25,7 +25,6 @@ class LineChart extends Component<IRecipeProps, IRecipeState> {
     const { data } = this.props;
     return data[data.length - 1].x;
   }
-  // GET MAX & MIN Y
   getMinY() {
     const { data } = this.props;
     return data.reduce(
