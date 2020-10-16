@@ -1,7 +1,14 @@
 .linechart_path {
-    stroke-width: 3;
-    fill: none;
-  }
-  .linechart_axis {
-    stroke: #bdc3c7;
-  }
+  stroke: #2196f3;
+  stroke-width: 1;
+  fill: none;
+}
+.linechart_axis {
+  stroke: #bdc3c7;
+}
+.main_line {
+  stroke-width: 2;
+}
+.axis {
+  stroke: black
+}

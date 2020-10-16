@@ -1,17 +1,27 @@
-import { point } from './../components/LineChart/LineChart';
+import { getEmptyArray } from "../utils";
+import { point } from "./../components/LineChart/LineChart";
 
-export function getGraphPoints (start: number, end: number, scale: number = 1): point[] {
-  const func = (x: number): number => Math.random() * Math.sin(x);
-  const arr = new Array(Math.floor((end - start) / scale))
-  const result = Array.from(arr.keys()).map((_, index) => {
-    const x = index * scale
+export function getGraphPoints(
+  min: number,
+  max: number,
+  func: Function,
+  koeff: number
+): point[] {
+  if (func(0) == null) {
+    return [
+      {
+        x: 0,
+        y: 0,
+      },
+    ];
+  }
+  console.log('koeff >>', koeff);
+  const result = getEmptyArray(max - min + 1).map((_, index) => {
+    const x = (Number(min) + index);
     return {
       x,
-      y: func(x)
-    }
-  })
-
-  console.log(result);
-  
-  return result
+      y: koeff * func(x / koeff),
+    };
+  });
+  return result;
 }
