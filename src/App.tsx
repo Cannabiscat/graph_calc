@@ -19,7 +19,7 @@ class App extends Component<{}, AppState> {
     this.state = {
       expression: "x - 2",
       minX: -1,
-      maxX: 18,
+      maxX: 10,
     };
   }
   setData = (data: any) => {
